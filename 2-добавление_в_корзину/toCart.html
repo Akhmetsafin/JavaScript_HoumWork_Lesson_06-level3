@@ -43,12 +43,22 @@
     -->
 
     <script>
-        let productMy = document.getElementById('.product');
-        console.log(productMy);
+        let productMy = document.querySelectorAll('.product');
 
-        /*function buttonClickHandler(event) {
-		
-        }*/
+        console.log(productMy);
+        productMy.forEach(function(button) {
+            button.addEventListener('click', buttonClickHandler);
+
+
+        });
+
+        function buttonClickHandler(event) {
+            event.target.parentNode.style.background = 'lime';
+            event.target.textContent = 'Добавлено';
+
+        };
+
+        // как внутри функции поменять техт Товар 1 -в div>Товар 1</div>
     </script>
 </body>
 
